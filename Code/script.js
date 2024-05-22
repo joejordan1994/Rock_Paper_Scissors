@@ -1,7 +1,13 @@
 function getComputerChoice() {
-    const choices = [`rock`, `paper`, `scissors`];
+    const computerChoices = [`rock`, `paper`, `scissors`];
     const randomIndex = Math.floor(Math.random() * 3);
-    return choices[randomIndex];
+    return computerChoices[randomIndex];
 }
 
-console.log(getComputerChoice());
+function getHumanChoice() {
+    const humanChoices = [`rock`, `paper`, `scissors`];
+    let humanChoice = prompt('Please enter one of the following: rock, paper, or scissors').toLowerCase();
+    return humanChoice;
+}
+
+console.log(getHumanChoice());
