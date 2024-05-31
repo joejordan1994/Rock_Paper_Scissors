@@ -13,3 +13,9 @@ who wins the first point*/
 /*When a user inputs which choice they want to make, run a random choice generator for the computer to determine
 the computer's choice. Decide the winner by a set of rules for what beats what*/
 
+function getComputerChoice() {
+    const choices = [`rock`, `paper`, `scissors`];
+    const randomChoice = choices[Math.floor(Math.random() * 3)];
+    console.log(randomChoice);
+}
+
