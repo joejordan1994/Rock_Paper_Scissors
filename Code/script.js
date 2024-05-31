@@ -16,14 +16,29 @@ function getHumanChoice() {
   return humanChoice;
 }
 
-getHumanChoice();
+console.log(getHumanChoice());
+console.log(getComputerChoice());
 
-function determineTie() {
+function determineWinner() {
   if (randomChoice === humanChoice) {
-    console.log(`It's a tie!`);
+    console.log("It's a tie!");
+  } else if (randomChoice === "rock" && humanChoice === "paper") {
+    console.log("You won! Paper beats rock.");
+  } else if (randomChoice === "rock" && humanChoice === "scissors") {
+    console.log("Computer won! Rock beats scissors.");
+  } else if (randomChoice === "paper" && humanChoice === "rock") {
+    console.log("Computer won! Paper beats rock.");
+  } else if (randomChoice === "paper" && humanChoice === "scissors") {
+    console.log("You won! Scissors beat paper.");
+  } else if (randomChoice === "scissors" && humanChoice === "rock") {
+    console.log("You won! Rock beats scissors.");
+  } else if (randomChoice === "scissors" && humanChoice === "paper") {
+    console.log("Computer won! Scissors beat paper.");
   } else {
-    console.log(`It's not a tie, one of y'all definitely won`);
+    console.log(
+      "Invalid input. Please choose either rock, paper, or scissors."
+    );
   }
 }
 
-determineTie();
+determineWinner();
