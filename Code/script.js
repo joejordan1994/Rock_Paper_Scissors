@@ -1,23 +1,29 @@
-const choices = [`rock`, `paper`, `scissors`];
+let randomChoice;
+let humanChoice;
 
 function getComputerChoice() {
-  let randomChoice = choices[Math.floor(Math.random() * 3)];
-  console.log(randomChoice);
+  const choices = [`rock`, `paper`, `scissors`];
+  randomChoice = choices[Math.floor(Math.random() * 3)];
+  return randomChoice;
 }
 
 getComputerChoice();
 
 function getHumanChoice() {
-  let humanChoice = prompt(
+  humanChoice = prompt(
     `Please choose either rock, paper, or scissors.`
   ).toLowerCase();
-  console.log(humanChoice);
+  return humanChoice;
 }
 
 getHumanChoice();
 
-if (randomChoice == humanChoice) {
-  console.log(`It's a tie!`);
-} else {
-  console.log(`It's not a tie, one of y'all definitely won`);
+function determineTie() {
+  if (randomChoice === humanChoice) {
+    console.log(`It's a tie!`);
+  } else {
+    console.log(`It's not a tie, one of y'all definitely won`);
+  }
 }
+
+determineTie();
