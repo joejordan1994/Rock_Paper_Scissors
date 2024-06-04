@@ -85,4 +85,11 @@ playGame();
 
 while (humanScore < 5 && computerScore < 5) {
   playGame();
+  if (humanScore === 5) {
+    console.log(`Blast! The human has won. Rematch?`);
+  } else if (computerScore === 5) {
+    console.log(`Hahaha! I, the mighty computer, have won!`);
+  } else {
+    null;
+  }
 }
