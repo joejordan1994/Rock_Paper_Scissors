@@ -1,7 +1,5 @@
 let randomChoice;
 let humanChoice;
-let humanScore = 0;
-let computerScore = 0;
 
 function getComputerChoice() {
   const choices = [`rock`, `paper`, `scissors`];
@@ -21,21 +19,36 @@ function getHumanChoice() {
 console.log(getHumanChoice());
 console.log(getComputerChoice());
 
-function determineWinner() {
+let humanScore = 0;
+let computerScore = 0;
+
+function playRound() {
   if (randomChoice === humanChoice) {
-    console.log("It's a tie!");
+    console.log("It's a tie! No points.");
   } else if (randomChoice === "rock" && humanChoice === "paper") {
-    console.log("You won! Paper beats rock.");
+    console.log("You won! Paper beats rock. 1 point to you.");
+    humanScore++;
+    console.log(`Your score: ${humanScore}, Computer score: ${computerScore}.`);
   } else if (randomChoice === "rock" && humanChoice === "scissors") {
-    console.log("Computer won! Rock beats scissors.");
+    console.log("Computer won! Rock beats scissors. 1 point to the computer.");
+    computerScore++;
+    console.log(`Your score: ${humanScore}, Computer score: ${computerScore}.`);
   } else if (randomChoice === "paper" && humanChoice === "rock") {
-    console.log("Computer won! Paper beats rock.");
+    console.log("Computer won! Paper beats rock. 1 point to the computer.");
+    computerScore++;
+    console.log(`Your score: ${humanScore}, Computer score: ${computerScore}.`);
   } else if (randomChoice === "paper" && humanChoice === "scissors") {
-    console.log("You won! Scissors beat paper.");
+    console.log("You won! Scissors beats paper. 1 point to you.");
+    humanScore++;
+    console.log(`Your score: ${humanScore}, Computer score: ${computerScore}.`);
   } else if (randomChoice === "scissors" && humanChoice === "rock") {
-    console.log("You won! Rock beats scissors.");
+    console.log("You won! Rock beats scissors. 1 point to you.");
+    humanScore++;
+    console.log(`Your score: ${humanScore}, Computer score: ${computerScore}.`);
   } else if (randomChoice === "scissors" && humanChoice === "paper") {
-    console.log("Computer won! Scissors beat paper.");
+    console.log("Computer won! Scissors beats paper. 1 point to the computer.");
+    computerScore++;
+    console.log(`Your score: ${humanScore}, Computer score: ${computerScore}.`);
   } else {
     console.log(
       "Invalid input. Please choose either rock, paper, or scissors."
@@ -43,4 +56,4 @@ function determineWinner() {
   }
 }
 
-determineWinner();
+
