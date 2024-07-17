@@ -3,7 +3,7 @@ let computerScore = 0;
 
 function playGame() {
   let randomChoice;
-  let humanChoice
+  let humanChoice;
 
   function getComputerChoice() {
     const choices = [`rock`, `paper`, `scissors`];
