@@ -15,6 +15,8 @@ function getHumanChoice() {
   return humanChoice;
 }
 
+const randomChoice = getComputerChoice();
+
 console.log(getHumanChoice());
 console.log(getComputerChoice());
 
@@ -55,7 +57,6 @@ function playRound(getHumanChoice, getComputerChoice) {
   }
 }
 
-playRound();
 document
   .getElementById("rockBtn")
   .addEventListener("click", () => playRound("rock", getComputerChoice()));
