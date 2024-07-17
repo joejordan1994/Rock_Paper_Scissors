@@ -55,13 +55,13 @@ function playRound(getHumanChoice, getComputerChoice) {
   }
 }
 
-// playRound();
-// document
-//   .getElementById("rockBtn")
-//   .addEventListener("click", () => playRound("rock", getComputerChoice()));
-// document
-//   .getElementById("paperBtn")
-//   .addEventListener("click", () => playRound("paper", getComputerChoice()));
-// document
-//   .getElementById("scissorsBtn")
-//   .addEventListener("click", () => playRound("scissors", getComputerChoice()));
+playRound();
+document
+  .getElementById("rockBtn")
+  .addEventListener("click", () => playRound("rock", getComputerChoice()));
+document
+  .getElementById("paperBtn")
+  .addEventListener("click", () => playRound("paper", getComputerChoice()));
+document
+  .getElementById("scissorsBtn")
+  .addEventListener("click", () => playRound("scissors", getComputerChoice()));
