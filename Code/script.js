@@ -82,3 +82,9 @@ function playGame() {
 }
 
 playGame();
+
+// Create 3 buttons, one for each choice
+// Add event listener that activate play round function, with correct player selection when the button is clicked
+// Add a div for displaying results
+// Display the running score, announce winner at 5 points
+// Get to work
