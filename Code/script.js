@@ -81,4 +81,5 @@ function playGame() {
   playRound();
 }
 
-playGame();
+const rockBtn = document.getElementById("rockBtn");
+rockBtn.addEventListener("click", playGame());
