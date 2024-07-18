@@ -42,6 +42,8 @@ button:active {
   align-items: center;
 }
 
+/* Let's make these boxes look better at blank face */
+
 .huScore,
 .coScore {
   outline: 2px solid black;
