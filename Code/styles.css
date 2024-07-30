@@ -44,8 +44,8 @@ button:active {
 
 /* Let's make these boxes look better at blank face */
 
-.huScore,
-.coScore {
+#huScore,
+#coScore {
   outline: 2px solid black;
   width: 2rem;
   height: auto;
@@ -58,6 +58,7 @@ h2 {
 
 #resultBox,
 #huChoice,
-#coChoice {
+#coChoice,
+#theWinner {
   text-align: center;
 }
