@@ -7,24 +7,34 @@ function getComputerChoice() {
 }
 
 function playRound(humanChoice, computerChoice) {
-  console.log(`Human choice: ${humanChoice}`);
-  console.log(`Computer choice: ${computerChoice}`);
+  let huChoice;
+  let coChoice;
+  huChoice = `Human choice: ${humanChoice}`;
+  coChoice = `Computer choice: ${computerChoice}`;
+
+  let resultText;
 
   if (humanChoice === computerChoice) {
-    console.log("It's a tie! No points.");
+    resultText = "It's a tie! No points.";
   } else if (
     (humanChoice === "rock" && computerChoice === "scissors") ||
     (humanChoice === "paper" && computerChoice === "rock") ||
     (humanChoice === "scissors" && computerChoice === "paper")
   ) {
-    console.log("You won this round!");
+    resultText = "The human won this round!";
     humanScore++;
   } else {
-    console.log("Computer won this round!");
+    resultText = "The computer won this round!";
     computerScore++;
   }
 
   console.log(`Your score: ${humanScore}, Computer score: ${computerScore}`);
+
+  document.getElementById("huChoice").innerText = huChoice;
+
+  document.getElementById("coChoice").innerText = coChoice;
+
+  document.getElementById("resultBox").textContent = resultText;
 }
 
 document.getElementById("rockBtn").addEventListener("click", () => {

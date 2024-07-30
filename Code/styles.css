@@ -55,3 +55,9 @@ button:active {
 h2 {
   text-align: center;
 }
+
+#resultBox,
+#huChoice,
+#coChoice {
+  text-align: center;
+}
