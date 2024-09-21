@@ -62,3 +62,27 @@ h2 {
 #theWinner {
   text-align: center;
 }
+.play-again-container {
+  text-align: center;
+  margin-top: 20px; /* Optional: adds some space above the button */
+}
+
+/* Styles for the 'Play Again' button */
+#playAgainBtn {
+  cursor: pointer;
+  padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  outline: none;
+  color: #fff;
+  background-color: #61a4ad;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+#playAgainBtn:active {
+  background-color: #07575b;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}

@@ -1,5 +1,6 @@
 let humanScore = 0;
 let computerScore = 0;
+let gameOver = false; // Added gameOver flag
 
 function getComputerChoice() {
   const choices = ["rock", "paper", "scissors"];
@@ -7,10 +8,12 @@ function getComputerChoice() {
 }
 
 function playRound(humanChoice, computerChoice) {
-  let huChoice;
-  let coChoice;
-  huChoice = `The human chose... ${humanChoice}`;
-  coChoice = `The computer chose... ${computerChoice}`;
+  if (gameOver) {
+    return; // Stop the function if the game is over
+  }
+
+  let huChoice = `The human chose... ${humanChoice}`;
+  let coChoice = `The computer chose... ${computerChoice}`;
 
   let resultText;
   let winnerAnnouncement;
@@ -31,25 +34,46 @@ function playRound(humanChoice, computerChoice) {
 
   if (humanScore === 5) {
     winnerAnnouncement = "The human has won!";
+    gameOver = true; // Set game over
+    disableButtons(); // Disable the choice buttons
+    document.getElementById("playAgainBtn").style.display = "inline"; // Show Play Again button
   } else if (computerScore === 5) {
     winnerAnnouncement = "The computer has won!";
-  } else if (humanScore > 5 || computerScore > 5) {
-    winnerAnnouncement = "The game is over, refresh to play again!";
+    gameOver = true;
+    disableButtons();
+    document.getElementById("playAgainBtn").style.display = "inline";
   } else {
     winnerAnnouncement = "Who's it gonna be...?";
   }
 
   document.getElementById("huChoice").innerText = huChoice;
-
   document.getElementById("coChoice").innerText = coChoice;
-
   document.getElementById("resultBox").textContent = resultText;
-
   document.getElementById("theWinner").innerText = winnerAnnouncement;
-
   document.getElementById("huScore").innerText = humanScore;
-
   document.getElementById("coScore").innerText = computerScore;
+}
+
+function disableButtons() {
+  document.getElementById("rockBtn").disabled = true;
+  document.getElementById("paperBtn").disabled = true;
+  document.getElementById("scissorsBtn").disabled = true;
+}
+
+function resetGame() {
+  humanScore = 0;
+  computerScore = 0;
+  gameOver = false;
+  document.getElementById("huScore").innerText = humanScore;
+  document.getElementById("coScore").innerText = computerScore;
+  document.getElementById("huChoice").innerText = "The human chose...";
+  document.getElementById("coChoice").innerText = "The computer chose...";
+  document.getElementById("resultBox").textContent = "Who won the round?";
+  document.getElementById("theWinner").innerText = "Who's it gonna be...?";
+  document.getElementById("rockBtn").disabled = false;
+  document.getElementById("paperBtn").disabled = false;
+  document.getElementById("scissorsBtn").disabled = false;
+  document.getElementById("playAgainBtn").style.display = "none"; // Hide Play Again button
 }
 
 document.getElementById("rockBtn").addEventListener("click", () => {
@@ -66,3 +90,5 @@ document.getElementById("scissorsBtn").addEventListener("click", () => {
   const computerChoice = getComputerChoice();
   playRound("scissors", computerChoice);
 });
+
+document.getElementById("playAgainBtn").addEventListener("click", resetGame);
