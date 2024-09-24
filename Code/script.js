@@ -1,6 +1,6 @@
 let humanScore = 0;
 let computerScore = 0;
-let gameOver = false; // Added gameOver flag
+let gameOver = false;
 
 function getComputerChoice() {
   const choices = ["rock", "paper", "scissors"];
@@ -34,9 +34,9 @@ function playRound(humanChoice, computerChoice) {
 
   if (humanScore === 5) {
     winnerAnnouncement = "The human has won!";
-    gameOver = true; // Set game over
-    disableButtons(); // Disable the choice buttons
-    document.getElementById("playAgainBtn").style.display = "inline"; // Show Play Again button
+    gameOver = true;
+    disableButtons();
+    document.getElementById("playAgainBtn").style.display = "inline";
   } else if (computerScore === 5) {
     winnerAnnouncement = "The computer has won!";
     gameOver = true;
@@ -73,7 +73,7 @@ function resetGame() {
   document.getElementById("rockBtn").disabled = false;
   document.getElementById("paperBtn").disabled = false;
   document.getElementById("scissorsBtn").disabled = false;
-  document.getElementById("playAgainBtn").style.display = "none"; // Hide Play Again button
+  document.getElementById("playAgainBtn").style.display = "none";
 }
 
 document.getElementById("rockBtn").addEventListener("click", () => {

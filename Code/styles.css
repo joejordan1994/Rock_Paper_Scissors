@@ -42,8 +42,6 @@ button:active {
   align-items: center;
 }
 
-/* Let's make these boxes look better at blank face */
-
 #huScore,
 #coScore {
   outline: 2px solid black;
@@ -64,10 +62,9 @@ h2 {
 }
 .play-again-container {
   text-align: center;
-  margin-top: 20px; /* Optional: adds some space above the button */
+  margin-top: 20px;
 }
 
-/* Styles for the 'Play Again' button */
 #playAgainBtn {
   cursor: pointer;
   padding: 15px 25px;
